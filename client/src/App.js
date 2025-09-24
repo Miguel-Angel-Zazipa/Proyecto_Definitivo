@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './css/App.css';
 import Axios from "axios";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {Link} from 'react-router-dom';
 
 function App() {
 
@@ -97,23 +98,23 @@ function App() {
       <div className="card-body">
         <div className="input-group mb-3">
           <span className="input-group-text" id="basic-addon1">Nombre:</span>
-          <input onChange={(event)=>{setNombre(event.target.value)}} value={nombre} type="text" className="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1"/>
+          <input onChange={(event)=>{setNombre(event.target.value)}} value={nombre} type="text" className="form-control" placeholder="Nombre de Usuario" aria-label="Username" aria-describedby="basic-addon1"/>
         </div>
         <div className="input-group mb-3">
           <span className="input-group-text" id="basic-addon1">Apellido:</span>
-          <input onChange={(event)=>{setApellido(event.target.value)}} value={apellido} type="text" className="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1"/>
+          <input onChange={(event)=>{setApellido(event.target.value)}} value={apellido} type="text" className="form-control" placeholder="Apellido del Usuario" aria-label="Username" aria-describedby="basic-addon1"/>
         </div>
         <div className="input-group mb-3">
           <span className="input-group-text" id="basic-addon1">Cedula:</span>
-          <input onChange={(event)=>{setCedula(event.target.value)}} value={numero_cedula} type="number" className="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1"/>
+          <input onChange={(event)=>{setCedula(event.target.value)}} value={numero_cedula} type="number" className="form-control" placeholder="Numero de Cedula" aria-label="Username" aria-describedby="basic-addon1"/>
         </div>
         <div className="input-group mb-3">
           <span className="input-group-text" id="basic-addon1">Correo:</span>
-          <input onChange={(event)=>{setCorreo(event.target.value)}} value={correo} type="email" className="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1"/>
+          <input onChange={(event)=>{setCorreo(event.target.value)}} value={correo} type="email" className="form-control" placeholder="Correo" aria-label="Username" aria-describedby="basic-addon1"/>
         </div>
         <div className="input-group mb-3">
           <span className="input-group-text" id="basic-addon1">Tipo de Usuario:</span>
-          <input onChange={(event)=>{setTipoUsuario(event.target.value)}} value={tipousuario} type="text" className="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1"/>
+          <input onChange={(event)=>{setTipoUsuario(event.target.value)}} value={tipousuario} type="text" className="form-control" placeholder="Tipo de Usuairo" aria-label="Username" aria-describedby="basic-addon1"/>
         </div>
         <div className="input-group mb-3">
           <span className="input-group-text" id="basic-addon1">Contraseña:</span>
@@ -130,6 +131,9 @@ function App() {
           </div>
           :<button className='btn btn-success' onClick={add} >Registrar</button>
         }
+        <Link to={"Login"}>
+          <button className='btn btn-info m-2' >Regresar</button>
+        </Link>
       </div>
     </div>
 

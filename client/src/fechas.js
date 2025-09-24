@@ -1,7 +1,6 @@
-import React, {Component} from "react";
 import {Link} from 'react-router-dom';
 
-function Home() {
+function Fechas() {
   return (
     <div>
         <header>
@@ -17,10 +16,10 @@ function Home() {
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <Link to={"/Candidatos"}><a>Candidatos</a></Link>
+                        <Link to={"/"}><a>Inicio</a></Link>
                     </li>
                     <li class="nav-item">
-                        <Link to={"/Fechas"}><a>Fechas</a></Link>
+                        <Link to={"/Candidatos"}><a>Candidatos</a></Link>
                     </li>
                     </ul>
                     <div class="navbar-nav ml-auto">
@@ -33,60 +32,34 @@ function Home() {
 
         <section class="hero">
             <div class="container text-center">
-                <h1 class="fade-in">Bienvenido a las votaciones</h1>
-                <p class="highlight">Participa y <strong>elige</strong> a tu próximo <span class="highlight">candidato</span>.</p>
+                <h1>Fechas para elección</h1>
+                <p>Te presentamos las fechas de las proximas elecciones del 2025 para la eleccion del personero. ¡No te
+                    quedes sin votar!</p>
             </div>
         </section>
 
-        <section class="carousel-container fade-in-up">
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="app/views/img/car 3.png" class="d-block w-100" alt="Imagen 1"/>
-                </div>
-                <div class="carousel-item">
-                    <img src="app/views/img/car 2.png" class="d-block w-100" alt="Imagen 2"/>
-                </div>
-                <div class="carousel-item">
-                    <img src="app/views/img/car 4.png" class="d-block w-100" alt="Imagen 3"/>
-                </div>
-                <div class="carousel-item">
-                    <img src="app/views/img/car 1.png" class="d-block w-100" alt="Imagen 4"/>
-                </div>
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
+        <section class="voto-usuario">
+            <div class="container">
+                <h2>Tu Voto</h2>
+                <p>Aquí se mostrará la información de tu voto. Por el momento, esta sección está en desarrollo.</p>
             </div>
         </section>
 
         <footer class="footer mt-5">
             <div class="container">
                 <div class="row">
-                    <div>
-                    <a>
-                        <img id="escudo" src="app/views/img/escudo.png" alt="Logo de la Empresa" class="footer-logo"/>
-                    </a>
+                    <div class="col-md-4 text-center">
+                        <a href="#">
+                            <img id="escudo" src="../img/escudo.png" alt="Logo de la Empresa" class="footer-logo"/>
+                        </a>
                     </div>
                     <div class="col-md-4">
-                    <h5>Secciones</h5>
-                    <ul class="list-unstyled">
-                        <Link to={"/Candidatos"}><a>Candidatos</a></Link><br/>
-                        <Link to={"/Fechas"}><a>Fechas</a></Link>
-                    </ul>
+                        <h5>Secciones</h5>
+                        <ul class="list-unstyled">
+                            <Link to={"/"}><a>Inicio</a></Link><br/>
+                            <Link to={"/Candidatos"}><a>Candidatos</a></Link>
+                        </ul>
                     </div>
-
                     <div class="col-md-4 text-center">
                         <h5>Síguenos</h5>
                         <a href="https://www.youtube.com/@institutotecnicoindustrial408/videos" target="_blank" class="btn btn-outline-primary btn-sm">
@@ -107,8 +80,7 @@ function Home() {
         </footer>
 
     </div>
-
   );
 }
 
-export default Home;
+export default Fechas;
