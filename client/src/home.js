@@ -1,33 +1,34 @@
 import React, {Component} from "react";
 import {Link} from 'react-router-dom';
+import styles from './css/style.css'
+import logo from './img/logo.png'
+import face from './img/face.png'
+import x from './img/x.png'
+import insta from './img/insta.png'
+import imagen from './img/imagen.png'
+
 
 function Home() {
   return (
     <div>
         <header>
+            <img id="logo" src={logo} alt="Logo de la Empresa"/>
+            <h6 id="Titulo">Sistema de Votacion</h6>
                 <nav class="navbar navbar-expand-lg navbar-light">
-                <a class="navbar-brand" href="#">
-                    <img id="logo" src="../src/img/logo.png" alt="Logo de la Empresa"/>
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <h6 id="Titulo">Sistema de Votacion</h6>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <Link to={"/Candidatos"}><a>Candidatos</a></Link>
-                    </li>
-                    <li class="nav-item">
-                        <Link to={"/Fechas"}><a>Fechas</a></Link>
-                    </li>
-                    </ul>
-                    <div class="navbar-nav ml-auto">
-                        <Link to={"/Login"}><a class="nav-item nav-link btn btn-primary">Ingresar</a></Link>
-                        <Link to={"/Register"}><a class="nav-item nav-link btn btn-primary">Registrar</a></Link>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <Link to={"/Candidatos"}><a>Candidatos</a></Link>
+                        </li>
+                        <li class="nav-item">
+                            <Link to={"/Fechas"}><a>Fechas</a></Link>
+                        </li>
+                        </ul>
+                        <div class="navbar-nav ml-auto">
+                            <Link to={"/Login"}><a class="boton">Ingresar</a></Link>
+                            <Link to={"/Register"}><a class="boton">Registrar</a></Link>
+                        </div>
                     </div>
-                </div>
                 </nav>
         </header>
 
@@ -38,69 +39,44 @@ function Home() {
             </div>
         </section>
 
-        <section class="carousel-container fade-in-up">
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="app/views/img/car 3.png" class="d-block w-100" alt="Imagen 1"/>
+        <section>
+            <div class="container">
+                <div class="contenido">
+                    <img id="imagen" src={imagen} alt="Imagen"/>
                 </div>
-                <div class="carousel-item">
-                    <img src="app/views/img/car 2.png" class="d-block w-100" alt="Imagen 2"/>
-                </div>
-                <div class="carousel-item">
-                    <img src="app/views/img/car 4.png" class="d-block w-100" alt="Imagen 3"/>
-                </div>
-                <div class="carousel-item">
-                    <img src="app/views/img/car 1.png" class="d-block w-100" alt="Imagen 4"/>
-                </div>
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
             </div>
         </section>
 
-        <footer class="footer mt-5">
+        <footer class="footer">
             <div class="container">
-                <div class="row">
-                    <div>
-                    <a>
-                        <img id="escudo" src="app/views/img/escudo.png" alt="Logo de la Empresa" class="footer-logo"/>
-                    </a>
+                <div class="footer-row">
+                    <div class="footer-links">
+                        <a>
+                            <h1>Sistema de<br/> Votacion</h1>
+                        </a>
                     </div>
-                    <div class="col-md-4">
-                    <h5>Secciones</h5>
-                    <ul class="list-unstyled">
-                        <Link to={"/Candidatos"}><a>Candidatos</a></Link><br/>
-                        <Link to={"/Fechas"}><a>Fechas</a></Link>
-                    </ul>
+                    <div class="footer-links">
+                        <ul class="list-unstyled">
+                            <Link to={"/Candidatos"}><a>Politica de Uso</a></Link><br/>
+                            <Link to={"/Fechas"}><a>@2025 Sistema de Votacion</a></Link><br/>
+                            <Link to={"/Fechas"}><a>¿Necesitas Ayuda?</a></Link>
+                        </ul>
                     </div>
 
-                    <div class="col-md-4 text-center">
-                        <h5>Síguenos</h5>
-                        <a href="https://www.youtube.com/@institutotecnicoindustrial408/videos" target="_blank" class="btn btn-outline-primary btn-sm">
-                            <i class="fa-brands fa-youtube"></i>
-                        </a>
-                        <a href="https://x.com/?lang=es" target="_blank" class="btn btn-outline-info btn-sm">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="https://www.instagram.com/" target="_blank" class="btn btn-outline-danger btn-sm">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://www.facebook.com/groups/5188566389?locale=es_LA" target="_blank" class="btn btn-outline-primary btn-sm">
-                            <i class="fa-brands fa-facebook"></i>
-                        </a>
+
+                    <div class="footer-links">
+                        <h2 id="siguenos">Siguenos</h2>
+                        <div class="social-link">
+                            <a href="https://www.facebook.com/" target="_blank">
+                                <img id="escudo" src={face} alt="Facebook" />
+                            </a>
+                            <a href="https://www.x.com/" target="_blank">
+                                <img id="escudo" src={x} alt="X" />
+                            </a>  
+                            <a href="https://www.instagram.com/" target="_blank">
+                                <img id="escudo" src={insta} alt="Instagram" />
+                            </a>   
+                        </div>   
                     </div>
                 </div>
             </div>

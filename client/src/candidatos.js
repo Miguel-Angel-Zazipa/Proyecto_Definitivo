@@ -1,18 +1,18 @@
 import {Link} from 'react-router-dom';
+import styles from './css/style.css'
+import logo from './img/logo.png'
+import face from './img/face.png'
+import x from './img/x.png'
+import insta from './img/insta.png'
+import React from 'react';
 
 function Candidatos() {
   return (
     <div>
         <header>
+            <img id="logo" src={logo} alt="Logo de la Empresa"/>
+            <h6 id="Titulo">Sistema de Votacion</h6>
                 <nav class="navbar navbar-expand-lg navbar-light">
-                <a class="navbar-brand" href="#">
-                    <img id="logo" src="../src/img/logo.png" alt="Logo de la Empresa"/>
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <h6 id="Titulo">Sistema de Votacion</h6>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
@@ -23,8 +23,8 @@ function Candidatos() {
                     </li>
                     </ul>
                     <div class="navbar-nav ml-auto">
-                        <Link to={"/Login"}><a class="nav-item nav-link btn btn-primary">Ingresar</a></Link>
-                        <Link to={"/Register"}><a class="nav-item nav-link btn btn-primary">Registrar</a></Link>
+                        <Link to={"/Login"}><a class="boton">Ingresar</a></Link>
+                        <Link to={"/Register"}><a class="boton">Registrar</a></Link>
                     </div>
                 </div>
                 </nav>
@@ -101,39 +101,41 @@ function Candidatos() {
         </div>
 
 
-        <footer class="footer mt-5">
+        <footer class="footer">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-4 text-center">
-                        <a href="#">
-                            <img id="escudo" src="../img/escudo.png" alt="Logo de la Empresa" class="footer-logo"/>
+                <div class="footer-row">
+                    <div class="footer-links">
+                        <a>
+                            <h1>Sistema de<br/> Votacion</h1>
                         </a>
                     </div>
-                    <div class="col-md-4">
-                        <h5>Secciones</h5>
+                    <div class="footer-links">
                         <ul class="list-unstyled">
-                            <Link to={"/"}><a>Inicio</a></Link><br/>
-                            <Link to={"/Fechas"}><a>Fechas</a></Link>
+                            <Link to={"/Candidatos"}><a>Politica de Uso</a></Link><br/>
+                            <Link to={"/Fechas"}><a>@2025 Sistema de Votacion</a></Link><br/>
+                            <Link to={"/Fechas"}><a>¿Necesitas Ayuda?</a></Link>
                         </ul>
                     </div>
-                    <div class="col-md-4 text-center">
-                        <h5>Síguenos</h5>
-                        <a href="https://www.youtube.com/@institutotecnicoindustrial408/videos" target="_blank" class="btn btn-outline-primary btn-sm">
-                            <i class="fa-brands fa-youtube"></i>
-                        </a>
-                        <a href="https://x.com/?lang=es" target="_blank" class="btn btn-outline-info btn-sm">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="https://www.instagram.com/" target="_blank" class="btn btn-outline-danger btn-sm">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://www.facebook.com/groups/5188566389?locale=es_LA" target="_blank" class="btn btn-outline-primary btn-sm">
-                            <i class="fa-brands fa-facebook"></i>
-                        </a>
+
+
+                    <div class="footer-links">
+                        <h2 id="siguenos">Siguenos</h2>
+                        <div class="social-link">
+                            <a href="https://www.facebook.com/" target="_blank">
+                                <img id="escudo" src={face} alt="Facebook" />
+                            </a>
+                            <a href="https://www.x.com/" target="_blank">
+                                <img id="escudo" src={x} alt="X" />
+                            </a>  
+                            <a href="https://www.instagram.com/" target="_blank">
+                                <img id="escudo" src={insta} alt="Instagram" />
+                            </a>   
+                        </div>   
                     </div>
                 </div>
             </div>
         </footer>
+
 
 
     </div>

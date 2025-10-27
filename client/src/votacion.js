@@ -1,68 +1,67 @@
+import React from 'react';
 import {Link} from 'react-router-dom';
+import logo from './img/logo.png'
+import face from './img/face.png';
+import insta from './img/insta.png';
+import x from './img/x.png';
 
 function Votacion() {
   return (
     <div>
         <header>
+            <img id="logo" src={logo} alt="Logo de la Empresa"/>
+            <h6 id="Titulo">Sistema de Votacion</h6>
                 <nav class="navbar navbar-expand-lg navbar-light">
-                <a class="navbar-brand" href="#">
-                    <img id="logo" src="../src/img/logo.png" alt="Logo de la Empresa"/>
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <h6 id="Titulo">Sistema de Votacion</h6>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <Link to={"/"}><a>Inicio</a></Link>
-                    </li>
-                    <li class="nav-item">
-                        <Link to={"/Candidatos"}><a>Candidatos</a></Link>
-                    </li>
-                    <li class="nav-item">
-                        <Link to={"/Fechas"}><a>Fechas</a></Link>
-                    </li>
-                    </ul>
-                </div>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item">
+                                <Link to={"/"}><a>Inicio</a></Link>
+                            </li>
+                            <li class="nav-item">
+                                <Link to={"/Candidatos"}><a class="boton">Candidatos</a></Link>
+                            </li>
+                            <li class="nav-item">
+                                <Link to={"/Fechas"}><a class="boton">Fechas</a></Link>
+                            </li>
+                        </ul>
+                    </div>
                 </nav>
         </header>
 
-            <footer class="footer mt-5">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-4 text-center">
-                            <a href="#">
-                                <img id="escudo" src="../img/escudo.png" alt="Logo de la Empresa" class="footer-logo"/>
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-row">
+                    <div class="footer-links">
+                        <a>
+                            <h1>Sistema de<br/> Votacion</h1>
+                        </a>
+                    </div>
+                    <div class="footer-links">
+                        <ul class="list-unstyled">
+                            <Link to={"/Candidatos"}><a>Politica de Uso</a></Link><br/>
+                            <Link to={"/Fechas"}><a>@2025 Sistema de Votacion</a></Link><br/>
+                            <Link to={"/Fechas"}><a>¿Necesiatas Ayuda?</a></Link>
+                        </ul>
+                    </div>
+
+
+                    <div class="footer-links">
+                        <h2 id="siguenos">Siguenos</h2>
+                        <div class="social-link">
+                            <a href="https://www.facebook.com/" target="_blank">
+                                <img id="escudo" src={face} alt="Facebook" />
                             </a>
-                        </div>
-                            <div class="col-md-4">
-                                <h5>Secciones</h5>
-                                <ul class="list-unstyled">
-                                    <Link to={"/"}><a>Inicio</a></Link><br/>
-                                    <Link to={"/Candidatos"}><a>Candidatos</a></Link>
-                                    <Link to={"/Fechas"}><a>Fechas</a></Link>
-                                </ul>
-                            </div>
-                        <div class="col-md-4 text-center">
-                            <h5>Síguenos</h5>
-                            <a href="https://www.youtube.com/@institutotecnicoindustrial408/videos" target="_blank" class="btn btn-outline-primary btn-sm">
-                            <i class="fa-brands fa-youtube"></i>
-                        </a>
-                        <a href="https://x.com/?lang=es" target="_blank" class="btn btn-outline-info btn-sm">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="https://www.instagram.com/" target="_blank" class="btn btn-outline-danger btn-sm">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://www.facebook.com/groups/5188566389?locale=es_LA" target="_blank" class="btn btn-outline-primary btn-sm">
-                            <i class="fa-brands fa-facebook"></i>
-                        </a>
-                        </div>
+                            <a href="https://www.x.com/" target="_blank">
+                                <img id="escudo" src={x} alt="X" />
+                            </a>  
+                            <a href="https://www.instagram.com/" target="_blank">
+                                <img id="escudo" src={insta} alt="Instagram" />
+                            </a>   
+                        </div>   
                     </div>
                 </div>
-            </footer>
+            </div>
+        </footer>
 
     </div>
   );
