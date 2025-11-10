@@ -62,10 +62,11 @@ nav a{
 
 
 #imagen{
-    margin: 30px;
+    margin: px;
     height: 500px;
     width: 1200px;
 }
+
 /* Estilos para el footer */
 .footer{
     background-color: #432deb;

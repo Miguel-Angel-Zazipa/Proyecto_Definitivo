@@ -33,7 +33,7 @@ function Fechas() {
         <section class="hero">
             <div class="container text-center">
                 <h1>Fechas para elección</h1>
-                <p>Te presentamos las fechas de las proximas elecciones del 2025 para la eleccion del personero. ¡No te
+                <p>Te presentamos las fechas de las proximas votaciones del 2025. ¡No te
                     quedes sin votar!</p>
             </div>
         </section>

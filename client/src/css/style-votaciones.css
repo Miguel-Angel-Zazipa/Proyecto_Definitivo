@@ -1,0 +1,355 @@
+header {
+    background-color: #2d90eb;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: white;
+}
+
+nav{
+    display: flex;
+    gap: 20px;
+
+}
+
+#link{
+    text-decoration: none;
+    color: black;
+}
+
+nav a{
+    text-decoration: underline;
+    color: white;
+    margin: 10px;
+    font-size: 20px;
+}
+
+.boton{
+    background-color: white;
+    color: #2d90eb;
+    border-radius: 20px;
+    padding: 10px;
+    text-decoration: none;
+}
+
+/* Estilos para el logo */
+#logo{
+    width: 170px;
+    height: 150px;
+    margin: 30px;
+}
+#Titulo{
+    font-size: 40px;
+    color: black;
+}
+
+#usu{
+    text-decoration: none;
+    color: black;
+    margin: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#usuario{
+    height: 60px;
+    width: 60px;
+    background-color: white;
+    border-radius: 40px;
+    padding: 5px;
+}
+
+/* Estilos para la sección Hero */
+.hero {
+    background-color: #e9ecef;
+    padding: 50px 0;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.25rem;
+}
+
+
+.menu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: border .3s;
+}
+
+.menu:hover{
+    border: solid 2px #432deb;
+    border-radius: 20px;
+    box-shadow: inset;
+}
+
+.img-menu{
+    width: 100px;
+    height: auto;
+    padding-bottom: 10px;
+}
+
+.contenido{
+    align-items: center;
+    margin-top: 30px;
+}
+
+.contenedor-votaciones{
+    display: flex;
+    margin: 20px;
+    
+}
+
+.votaciones{
+    border: solid 4px #432deb;
+    border-radius: 20px;
+    margin: 15px;
+    padding: 10px;
+}
+
+.resultados{
+    border-radius: 20px;
+    margin: 15px;
+    padding: 10px;
+    align-items: center;
+    
+}
+
+.votaciones h2, h3{
+    color: #2d90eb;
+}
+
+.votaciones button{
+    
+}
+
+.votaciones h5{
+    color: #432deb;
+    font-weight: bold;
+    text-align: center;
+}
+
+.contenedor-pru{
+    display: flex;
+    justify-content: center;
+
+}
+
+.tarjeton{
+    display: inline-flex;
+    border: #432deb solid;
+    border-radius: 15px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.candidatos{
+    margin: 30px;
+    text-align: center;
+}
+
+.prueba{
+    display: flex;
+    margin: 5px;
+}
+
+.contenedor-formulario{
+    display: flex;
+    justify-content: center;
+}
+
+.contenedor-sele{
+    margin: 20px;
+    display: flex;  
+    justify-content: center;
+}
+
+.formulario-candidato{
+    font-size:large;
+    margin: 30px;
+}
+
+.formulario-candidato input, textarea{
+    height: 40px;
+    width: 700px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.formulario-candidato h2{
+    text-align: center;
+}
+
+.titulo-votacion{
+    font-size: 30px;
+    text-decoration: none;
+    color: black;
+    margin-left: 40px;
+    font-weight: bold;
+
+}
+
+hr{
+    margin-inline-start: 40px;
+    margin-inline-end: 40px;
+    background-color: #432deb;
+    border: none;
+    height: 5px;
+}
+
+.mini-logo{
+    height: 200px;
+    width: 200px;
+    border-radius: 100px;
+    margin: 10px;
+}
+
+.fecha{
+    color: #432deb;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.carrusel{
+    height: 500px;
+    margin-bottom: 250px;
+}
+
+.img-carrusel{
+    width: 1900px;
+    height: 600px;
+    padding: 20px;
+    padding-right: 20px;
+}
+
+/* Estilos para el footer */
+.footer{
+    background-color: #432deb;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-row{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-links{
+    margin-left: 200px;
+}
+
+.footer-links a{
+    font-size: 18px;
+    text-decoration:underline;
+    color: white;
+    display: block;
+    margin-bottom: 15px;
+    transition: all .3s ease;
+}
+
+.footer-links ul a:hover{
+    color: white;
+    padding-left: 6px;
+}
+
+.social-link a{
+    display: inline-block;
+    line-height: 40px;
+    border-radius: 50%;
+    color: white;
+    transition: all .3s ease;
+
+}
+
+#siguenos{
+    text-decoration:underline;
+    color: white;
+    display: block;
+    margin-bottom: 15px;
+    transition: all .3s ease;
+}
+
+/* Animaciones y efectos */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.highlight {
+    color: #007bff;
+    font-weight: bold;
+}
+
+.highlight:hover {
+    color: #0056b3;
+}
+
+/* Estilos adicionales para el botón de mostrar/ocultar contraseña */
+.input-group .toggle-password {
+    cursor: pointer;
+}
+
+.contenedor{
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+#escudo{
+    width: 70px;
+    height: 70px;
+    margin: 10px;
+}
+
+.boton-cerrar-sesion{
+    text-decoration: none;
+    color: #2d90eb;
+    background-color: white;
+    padding: 10px 6px;
+    border-color: white;
+    border-radius: 20px;
+}
+
+.ver-candidatos{
+    text-decoration: none;
+    color: white;
+    background-color: #432deb;
+    padding: 10px 6px;
+    border-color: #432deb;
+    border-radius: 10px;
+    display: block;
+    margin: auto;
+}
+

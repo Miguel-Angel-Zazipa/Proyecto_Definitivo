@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import { useState } from 'react';
 import {Link} from 'react-router-dom';
 import logo from './img/logo.png'
 import face from './img/face.png';
@@ -6,9 +7,60 @@ import insta from './img/insta.png';
 import x from './img/x.png';
 
 function Login() {
-  return (
 
-    <body>
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+
+  const [mensaje, setMensaje] = useState("");
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!formData.email.trim() || !formData.password.trim()) {
+      setMensaje("Por favor ingrese su correo y contraseña.");
+      return;
+    }
+
+    try {
+      const response = await fetch("http://localhost:3001/api/usuarios/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+      console.log(data);
+
+      if (response.ok) {
+        setMensaje("Inicio de sesión exitoso ✅");
+        localStorage.setItem("token", data.token);
+        localStorage.setItem("usuario", JSON.stringify(data.usuario));
+
+        const token = localStorage.getItem("token");
+
+        // Redirigir según el tipo de usuario
+        if (data.usuario.tipo_usuario === 1) {
+          window.location.href = "/menu";
+        } else {
+          window.location.href = "/votacion";
+        }
+      } else {
+        setMensaje(data.message || "Error en el inicio de sesión");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      setMensaje("Error de conexión con el servidor");
+    }
+  };
+
+  return (
+    <div className="App">      
         <header>
             <img id="logo" src={logo} alt="Logo de la Empresa"/>
             <h6 id="Titulo">Sistema de Votacion</h6>
@@ -19,52 +71,59 @@ function Login() {
                             <Link to={"/"}><a>Inicio</a></Link>
                         </li>
                         <li class="nav-item">
-                            <Link to={"/Candidatos"}><a>Candidatos</a></Link>
-                        </li>
-                        <li class="nav-item">
                             <Link to={"/Fechas"}><a>Fechas</a></Link>
                         </li>
                         </ul>
                         <div class="navbar-nav ml-auto">
-                            <Link to={"/Register"}><a class="boton">Registrar</a></Link>
+                            <Link to={"/register"}><a class="boton">Registrarse</a></Link>
                         </div>
                     </div>
                 </nav>
         </header>
+    
 
     <section class="hero">
         <div class="container text-center">
-            <h1 class="fade-in">Inicio de Sesión</h1>
-            <p class="highlight">Completa el formulario para <strong>ingresar</strong> en la <span
+            <h1 class="fade-in">Inicio de Sesion</h1>
+            <p class="highlight">Completa el formulario para <strong>iniciar sesion</strong> en la <span
                     class="highlight">elección de personero</span>.</p>
         </div>
     </section>
 
-    <section class="registro-form fade-in-up">
-        <div class="container">
-            <h2>Formulario de Inicio de Sesión</h2>
-            <form action="../../controllers/Ctrl_Login.php" method="post">
+    <section class="">
+        <div class="contenedor-formulario">
+            <div className="formulario-candidato">
+            <form onSubmit={handleSubmit}>
+            <h2>Formulario de Inicio de Sesion</h2>
                 <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="documento">Número de Documento</label>
-                        <input type="number" class="form-control" name="usuario" id="usuario"
-                            placeholder="Número de Documento" required/>
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="contrasena">Contraseña</label>
-                        <div class="input-group-append">
-                            <input type="password" class="form-control" name="contrasena" id="contrasena"
-                                placeholder="Contraseña" required/>
-                            <button class="btn btn-outline-secondary toggle-password" type="button"
-                                data-target="#contrasena">Mostrar</button>
-                        </div>
+                    <div class="">
+                        <label>Correo Electronico</label>
+                        <input onChange={handleChange} value={formData.email} type="email" name="email" class="form-control" 
+                            placeholder="Correo Electronico" required/>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+
+                <div class="">
+                    <div class="">
+                        <div class="">
+                            <div class="">
+                                <label>Contraseña</label>
+                                <div class="input-group">
+                                    <input onChange={handleChange} value={formData.password} type="password" class="form-control" name="password"
+                                        placeholder="Contraseña" required/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button className='btn btn-success' >Ingresar</button>
+                </div>
             </form>
+            {mensaje && <p>{mensaje}</p>}
+            </div>
         </div>
     </section>
 
+      
         <footer class="footer">
             <div class="container">
                 <div class="footer-row">
@@ -100,11 +159,8 @@ function Login() {
             </div>
         </footer>
 
-    </body>
-
+    </div>
   );
-};
+}
 
 export default Login;
-
-

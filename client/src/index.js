@@ -7,18 +7,34 @@ import Register from './register';
 import Fechas from './fechas';
 import Candidatos from './candidatos';
 import Votacion from './votacion';
+import CrearVotacion from './CrearVotacion';
+import Votar from './Votar';
 import {createBrowserRouter, RouterProvider } from 'react-router-dom';
 import {StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
+import RegistrarCandidato from './RegistrarCandidato';
+import ResultadosVotaciones from './Resultados';
+import Menu from './menu';
+import RutaProtegida from "./RutaProtegida";
+import RutaAdmin from "./RutaAdmin";
 
 const router = createBrowserRouter([
   {path:"/", element:<Home/>},
-  {path:"/crud", element:<App/>},
+
   {path:"/login", element:<Login/>},
   {path:"/register", element:<Register/>},
   {path:"/fechas", element:<Fechas/>},
   {path:"/candidatos", element:<Candidatos/>},
-  {path:"/votacion", element:<Votacion/>}
+  {path:"/resultados", element:<ResultadosVotaciones/>},
+  
+
+  {path:"/votacion", element:<RutaProtegida> <Votacion/></RutaProtegida>},
+  {path:"/votar", element:<RutaProtegida> <Votar/></RutaProtegida>},
+
+  {path:"/menu", element:<RutaAdmin> <Menu /> </RutaAdmin>},
+  {path:"/crud", element:<RutaAdmin> <App /> </RutaAdmin>},
+  {path:"/crearvotacion", element:<RutaAdmin> <CrearVotacion /> </RutaAdmin>},
+  {path:"/registrarcandidato", element:<RutaAdmin> <RegistrarCandidato/> </RutaAdmin>}
 
 ])
 

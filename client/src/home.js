@@ -6,6 +6,7 @@ import face from './img/face.png'
 import x from './img/x.png'
 import insta from './img/insta.png'
 import imagen from './img/imagen.png'
+import CarouselHome from "./carrusel";
 
 
 function Home() {
@@ -17,9 +18,6 @@ function Home() {
                 <nav class="navbar navbar-expand-lg navbar-light">
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <Link to={"/Candidatos"}><a>Candidatos</a></Link>
-                        </li>
                         <li class="nav-item">
                             <Link to={"/Fechas"}><a>Fechas</a></Link>
                         </li>
@@ -39,13 +37,9 @@ function Home() {
             </div>
         </section>
 
-        <section>
-            <div class="container">
-                <div class="contenido">
-                    <img id="imagen" src={imagen} alt="Imagen"/>
-                </div>
-            </div>
-        </section>
+        <div>
+            <CarouselHome />
+        </div>
 
         <footer class="footer">
             <div class="container">
